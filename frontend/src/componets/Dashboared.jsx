@@ -17,7 +17,7 @@ const Dashboard = () => {
         <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
         {user ? (
           <div>
-            <h2 className="text-2xl mb-2">Welcome, {user.name || user.email}!</h2> {/* Display user name or email */}
+            <h2 className="text-2xl mb-2">Welcome, {user.name|| user.email}!</h2> {/* Display user name or email */}
             <p className="mb-4 text-gray-600">This is your dashboard where you can manage your account.</p>
             <button
               onClick={handleLogout}
