@@ -7,9 +7,11 @@ import Signup from './componets/Signup';
 import Logout from './componets/Logout';
 import Dashboared from './componets/Dashboared';
 import ForgetPassword from './componets/ForgotPassword';
+import FetchData from './componets/FeatchData';
 import 'animate.css';
-
-
+import Books from './componets/books';
+import Profile from './componets/Profile';
+import Favorites from './componets/Favorites';
 const App = () => {
   return (
     <Router>
@@ -20,8 +22,13 @@ const App = () => {
         <Route path="/dashboared" element={<Dashboared />} />
         <Route path="/logout" element={<Logout />} />
         <Route path='forgotpassword' element={<ForgetPassword />} />
-      </Routes>
+        <Route path="/books" element={<Books />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/favorites" element={<Favorites />} />
+       </Routes>
+      <FetchData />
     </Router>
+    
   );
 };
 

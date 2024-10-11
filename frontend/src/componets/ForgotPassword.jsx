@@ -7,7 +7,6 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-
   const handleForgotPassword = async (e) => {
     e.preventDefault(); // Prevent default form submission
     try {

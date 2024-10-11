@@ -1,17 +1,17 @@
-// hooks/useAuth.js
-import { useState, useEffect } from 'react';
+// // hooks/useAuth.js
+// import { useState, useEffect } from 'react';
 
-const useAuth = () => {
-  const [user, setUser] = useState(null);
+// const useAuth = () => {
+//   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const userData = localStorage.getItem('user');
-    if (userData) {
-      setUser(JSON.parse(userData));
-    }
-  }, []);
+//   useEffect(() => {
+//     const userData = localStorage.getItem('user');
+//     if (userData) {
+//       setUser(JSON.parse(userData));
+//     }
+//   }, []);
 
-  return user;
-};
+//   return user;
+// };
 
-export default useAuth;
+// export default useAuth;

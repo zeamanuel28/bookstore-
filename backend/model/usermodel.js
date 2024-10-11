@@ -20,7 +20,7 @@ createUserTable();
 
 // Add a new user to the DB (for signup)
 const addUser = async (name, email, hashedPassword, isAdmin = false) => {
-  const query = `INSERT INTO users (fullname, username, email, password, isAdmin) VALUES ($1, $2, $3, $4, $5) RETURNING *`;
+  const query = `INSERT INTO users (name, email, password, isAdmin) VALUES ($1, $2, $3, $4) RETURNING *`;
   
   const values = [name ,email, hashedPassword, isAdmin];
   const result = await pool.query(query, values);
@@ -28,13 +28,11 @@ const addUser = async (name, email, hashedPassword, isAdmin = false) => {
   return result.rows[0];
 };
 
-// Find a user by username (for login)
-const findUserByUsername = async (username) => {
-  const query = `SELECT * FROM users WHERE username = $1`;
-  
-  const result = await pool.query(query, [username]);
+const findUserByEmail = async (email) => {
+  const query = `SELECT * FROM users WHERe email = $1`;
+  const result = await pool.query(query, [email,]);
   return result.rows[0];
 };
 
 // Export functions using ES module syntax
-export { addUser, findUserByUsername };
+export { addUser, findUserByEmail };
